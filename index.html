@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anime Beats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <h2>🌸 Sakura Beats</h2>
+
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search songs..."
+            onkeyup="searchSongs()"
+        >
+
+        <div class="top-icons">
+            <span>🔔</span>
+            <span id="username">Yuki-chan</span>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- HOME -->
+        <div id="homeView">
+
+            <h1>Good Evening ✨</h1>
+            <p>Your daily dose of songs</p>
+
+            <h2>All Songs</h2>
+            <div id="allSongs" class="songs"></div>
+
+        </div>
+
+        <!-- PLAYER -->
+        <div id="playerView" class="player-view hidden">
+
+            <button onclick="goBack()">⬅ Back</button>
+
+            <div class="player-layout">
+
+                <!-- LYRICS -->
+                <div class="lyrics">
+                    <h3>Lyrics</h3>
+                    <div id="lyricsText">No lyrics available</div>
+                </div>
+
+                <!-- PLAYER -->
+                <div class="player">
+                    <img id="mainCover">
+                    <h2 id="mainTitle">Song</h2>
+                    <p id="trackArtist">Artist</p>
+
+                    <!-- SEEK -->
+                    <input type="range" id="seekRange" value="0">
+
+                    <div>
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+
+                    <!-- CONTROLS -->
+                    <div class="controls">
+                        <button onclick="prevSong()">⏮</button>
+                        <button onclick="togglePlay()" id="playBtn">▶</button>
+                        <button onclick="nextSong()">⏭</button>
+                    </div>
+                </div>
+
+                <!-- QUEUE -->
+                <div class="queue">
+                    <h3>Up Next</h3>
+                    <div id="queueList"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
